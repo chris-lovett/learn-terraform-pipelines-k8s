@@ -26,8 +26,8 @@ resource "google_container_node_pool" "engineering_preemptible_nodes" {
   cluster  = google_container_cluster.engineering.name
   location = data.google_compute_zones.available.names.0
 
-  version = data.google_container_engine_versions.gke_version.latest_node_version  node_count = var.node_count
-
+  version     = data.google_container_engine_versions.gke_version.latest_node_version
+  node_count  = var.node_count
   node_config {
     preemptible  = true
     machine_type = "n1-standard-1"
