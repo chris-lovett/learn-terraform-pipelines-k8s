@@ -8,6 +8,13 @@ terraform {
       version = "~> 4.77.0"
     }
   }
+  cloud {
+    organization = "chris_lab"
+
+    workspaces {
+      name = "learn-terraform-pipelines-k8s"
+    }
+  }
 
   required_version = ">= 1.1.0"
 }
